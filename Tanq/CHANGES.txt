@@ -1,0 +1,131 @@
+Version 0.0.13 Dev:
+
+- Parameterised some (more) generics to make the code a tad more readable. 
+- Refactored packaging for improved readability.
+
+
+Version 0.0.12 Dev:
+
+- Modified Ammo to automatically relocate and regenerate Ammo dump every 60 seconds.
+
+
+Version 0.0.11 Dev:
+
+- Flocking "follow the leader" example introduced.  See TanqDemo12Flocking.java
+
+
+Version 0.0.10 Dev:
+
+- minor improvements to FiniteStateMachine example.
+
+
+Version 0.0.9 Dev:
+
+- uk.ac.derby.Core.AmmoDump is now returned by uk.ac.derby.Tanq.Brain.getAmmoLocations() to
+  provide information about the Ammo dumps.
+- uk.ac.derby.Tanq.Brain.getGunBulletsAvailable() returns number of available bullets.
+
+
+Version 0.0.8 Dev:
+
+- Use of generics now necessitates Java version 1.5.x or higher.
+- Ammo dumps and limited bullets now implemented.  See Brain.getAmmoLocations()
+
+
+Version 0.0.7 Dev:
+
+- Added setDirection() to Brain, to simplify setting direction/velocity vectors.
+- Collision now sets all movement/force vectors to zero.
+- Vastly improved collision/bump mechanisms eliminate problems with TanqS stalling
+  or sticking to each other.
+- Gun reload duration increased to prevent machine-gunning.
+- Added Blindman (Brain) and TanqDemo00Wanderers.
+- Scoreboard now uses table for improved readability.
+
+
+Version 0.0.6 Dev:
+
+- Refactorings done to enable future client/server version.
+- Driver altered to simplify and accelerate 'boing' mechanism, i.e.,
+  random movement obstacle avoidance.  Does it introduce problems?
+- Added FiniteStateMachine (Brain) and TanqDemo11FiniteStateMachine.
+
+
+Version 0.0.5 Dev:
+
+- Navigator has been refactored to more clearly indicate how the algorithm
+  works, and to support modifications.
+- AStarNode now uses floating point Cost values, to support smoother
+  paths.
+- Navigator2 has been added, which is faster than Navigator.
+
+
+Version 0.0.4 Dev:
+
+- Added getDistance() to Vector3D; a convenience method for calculating the distance
+  between two Vector3Ds.
+- Added getRandomLocation() to uk.ac.derby.Tanq.Brain to find a random location
+  not restricted by unpassable terrain.  Useful for setting random destinations.
+- uk.ac.derby.GameEngine2D.Map has been modified to return varying terrain values.
+  0 is 100% passable, 0 < getMapValue() < 255 is semi-passable, >= 255 is unpassable.
+- Added getBlurredMap() to Brain to obtain a Map with a semi-passable buffer around
+  each terrain pixel.  This improves A* and other navigation algorithms which
+  would otherwise hug or continuously collide with the walls.
+- Added markPoint to Brain to mark game arena locations for debugging purposes.
+- Tweaks made to Driver to improve behaviour when used in conjunction with A*.
+- Added Navigator, a Driver derivation that uses A* to navigate around terrain.
+  
+
+Version 0.0.3 Dev:
+
+- Added getRelativeAngle() to uk.ac.derby.GameEngine2D.Utility to obtain angle
+  specified by three points, where one point represents the apex.
+- Improved Driver, so it only slows down on sharp corners.  This sometimes results
+  in some slight meandering at the destination, but will tune more later...
+- Modified TanqDemo07 to keep path filled with points, in order to test
+  angle-based slowing.
+- Added TanqDemo09, which demonstrates movement in an arbitary, fixed pattern.
+- Brain now supports a Listener pattern for events, using uk.ac.derby.Tanq.BrainListener
+  and uk.ac.derby.Tanq.AbstractBrainListener.
+- Modified Driver to respond to terrain and opponent collision events, using Listener
+  pattern described above, and fly off randomly when these occur.  This is an example
+  of random movement obstacle avoidance.
+
+
+Version 0.0.2 Dev:
+
+- Changed gun fire() routine to prevent multiple
+  threads launching bullets before temperature rises.
+- Changed Brain to return copies of rigid body vectors
+  in getVelocityVector() and getLocation().  This
+  prevents inadvertent changes to internal Vector3D instances.
+- Fixed spelling of uk.ac.derby.GameEngine2D.Vector3D.subtract();
+  was 'substract()'.
+- Brain now supports println(String s) for logging messages, trash
+  talk, etc.
+- Created Driver class, which works in conjunction
+  with a Brain to drive a Tanq along a specified path.
+- Rewrote TanqDemo07PatternMovementPhysics to use Driver
+  and illustrate a square path.
+- Created TanqDemo08PatternMovementPhysics to use Driver
+  and illustrate a random path.
+
+
+Version 0.0.1 Dev:
+
+- Changed Madman to shoot at nearest opponent.
+- Created uk.ac.derby.Tanq.Version
+- Altered uk.ac.derby.Tanq.GUI to display version information in title bar
+- Added uk.ac.derby.Tanq.Brain.getOpponents()
+	- Returns array of Opponent data
+- Added uk.ac.derby.Tanq.Brain.getLandscapeWidth()
+	- Obtains width of battleground in pixels
+- Added uk.ac.derby.Tanq.Brain.getLandscapeHeight()
+    - Obtains height of battleground in pixels
+- Added uk.ac.derby.Tanq.Brain.getMap()
+	- Obtains a Map of the battleground terrain
+
+
+Version 0.0.0 Dev:
+
+- All prior versions branded "0.0.0" and considered obsolete.

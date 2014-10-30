@@ -1,0 +1,5 @@
+** ToDo **
+
+- Detect enemy fire event?
+- Allow a Tanq to reload at the same Ammo dump it's already used, after a set period of time?
+- Routine to check if a rectangle is blocked by terrain -- expose it.
