@@ -17,8 +17,9 @@ public class BasicChaser extends Brain {
 	
 	/** Invoked continuously.  Conscious behaviour goes here. */
 	public void compute() {
-		if (opponent == null)
+		if (opponent == null) {
 			return;
+		}
 		Vector3D myLocation = getLocation();
 		Vector3D opponentLocation = opponent.getLocation();
 		float myX = myLocation.getX(), myY = myLocation.getY();
